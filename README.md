@@ -3,10 +3,10 @@
 ### Overview:
 This project is a web application that transforms CSV files into specific format. it built using python==3.10.5, Flask framework version: 2.1.2 in dockerized environment.
 The website has an **upload page** that contains two methods:
-1) Upload customize CSV file: Users can upload a CSV file with a specific format, then they have the opportunity to download new transformed CSV file.
+1) Upload customised CSV file: Users can upload a CSV file with a specific format, and then they have the opportunity to download new transformed CSV file.
 2) Samples files for testing:
-1. Users could use the build-in test files which will be transformed to the correct format.
-2. Users has option to test using a generated random data which also will be tested and tranformed to correct format.
+   1. Users could use the build-in test files which will be transformed to the correct format.
+   2. Users have the option to test using a generated random data which also will be tested and tranformed to the correct format.
 
 ### Build:
 - Clone the repository `git clone repo`
