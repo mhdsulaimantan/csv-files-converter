@@ -1,15 +1,17 @@
 # csv-files-converter
 
-### Description:
-This project is a simple web application that transforms CSV files into specific formations. it was built using python language version: 3.10.5, Flask framework version: 2.1.2 in dockerized environment.
+### Overview:
+This project is a web application that transforms CSV files into specific format. it built using python==3.10.5, Flask framework version: 2.1.2 in dockerized environment.
+The website has an **upload page** that contains two methods:
+1) Upload customize CSV file: Users can upload a CSV file with a specific format, then they have the opportunity to download new transformed CSV file.
+2) Samples files for testing:
+1. Users could use the build-in test files which will be transformed to the correct format.
+2. Users has option to test using a generated random data which also will be tested and tranformed to correct format.
 
-### How it works:
-The website contains one page **upload page** that contains two methods:
-- **uploading files**: users can upload a CSV file with a specific formation, and then they have the opportunity to download new converted CSV file.
-- **test files**: users can use the test files that already exist where it will be converted to a new formated CSV file or to generate a test file then the application will convert it also.
+### Build:
+- Clone the repository `git clone repo`
+- Build `docker build -t csv-files-converter` (you could specify the tag, however, the defult one is the `latest`)
 
-### Run and install:
-- extract the project's zip file.
-- Build docker image named **csv-files-converter** for the project: `docker build -t csv-files-converter`
-- create docker container that run on port 5000: `docker run -p 5000:5000 csv-files-converter`
-- open localhost on your web browser with port 5000: `localhost:5000` it will redirect to the upload page `localhost:5000/upload`
+### Install:
+- Create docker container that run on port 5000: `docker run -p 5000:5000 csv-files-converter`
+- Open localhost on your web browser with port 5000: `localhost:5000` it will redirect to the upload page `localhost:5000/upload`
