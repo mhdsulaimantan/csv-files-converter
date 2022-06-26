@@ -10,7 +10,7 @@ The website has an **upload page** that contains two methods:
 
 ### Build:
 - Clone the repository `git clone repo`
-- Build `docker build -t csv-files-converter` (you could specify the tag, however, the defult one is the `latest`)
+- Build docker image: `docker build -t csv-files-converter .`
 
 ### Install:
 - Create docker container that run on port 5000: `docker run -p 5000:5000 csv-files-converter`
