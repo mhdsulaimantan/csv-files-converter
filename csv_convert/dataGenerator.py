@@ -12,7 +12,6 @@ class Generator:
     def __init__(self, BASE_DIR):
         self.BASE_DIR = BASE_DIR
 
-    # generate a random data that match our formation
     def generate(self):
         id_list, release_date, game_name, country_code, copies_sold, price = [], [], [], [], [], []
         id = 1
@@ -28,7 +27,7 @@ class Generator:
             name = ""
             for x in range(random.randint(1, 4)):
                 if name == "":
-                    # pick words that have less or equal to 5 characters
+                    # select words that have less or equal to 5 characters
                     name += random.choice(list(word for word in words.words()
                                           if len(word) <= 5))
                 else:
@@ -38,7 +37,7 @@ class Generator:
 
             game_name.append(name)
 
-            # randomly pick an alpha-3 country code for 249 countries
+            # randomly select an alpha-3 country code for 249 countries
             country_code.append(
                 list(countries)[random.randint(0, 248)].alpha_3)
 
@@ -52,7 +51,6 @@ class Generator:
         # data_list rows is columns in the new data frame
         df = pd.DataFrame(data_list).transpose()
 
-        # save the randomly generated data frame as CSV file in test_files dir
         path = os.path.join(self.BASE_DIR, 'test_files')
 
         df.to_csv((path + '/test3.csv'), header=False,
