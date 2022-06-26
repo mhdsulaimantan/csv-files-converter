@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <script src="https://kit.fontawesome.com/728c261f30.js" crossorigin="anonymous"></script>
+    <title>Upload page</title>
+</head>
+
+<body>
+    <h1 id="header">CSV File Converter</h1>
+    <div id="container">
+
+        <p id="con-para">This is a simple csv converter. Please upload your file here and make sure it is a csv type.
+        </p>
+        <form action="" id="upload-form" method="POST" enctype="multipart/form-data">
+            <label id="upload-btn">
+                <i class='fa-solid fa-upload'></i> Upload a CSV file<input type="file" style="display: none;"
+                    name="csv_file" onchange="document.getElementById('upload-form').submit()" required>
+            </label>
+        </form>
+        {% if info.msg %}
+        <p id="msg"><i class="fa-solid fa-circle-check"></i> {{ info.msg }}</p>
+        {% endif %}
+        {% if info.error %}
+        <p id="error-msg"><i class="fa-solid fa-circle-xmark"></i> {{ info.error }}</p>
+        {% endif %}
+
+        {% if info.file %}
+        <form action="" id="download-form" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="file" value="{{ info.file }}">
+            <button type="submit" id="download-btn"><i class="fa-solid fa-download"></i> Download File</button>
+        </form>
+        {% endif %}
+        <p id="con-para">You can also try one of the test files</p>
+        <form action="" id="test-form" method="GET">
+            <button type="submit" name="test" value=1>Test 1</button>
+            <button type="submit" name="test" value=2>Test 2</button>
+            <button type="submit" name="test" value=3>Generate a Random Test</button>
+        </form>
+    </div>
+</body>
+
+</html>
